@@ -112,6 +112,8 @@ def main():
                 if flag==1:
                     #x=st.text_input("Your response",key=st.session_state.counter)
                     x=input("Your Response")
+                    put_text("Your Response: "+x)
+                    put_text("Better way of responding might be:")
                     #st.session_state.counter += 1
                     flag=0
                 if x!="":
@@ -132,6 +134,9 @@ def main():
                 if flag==1:
                     #x1=st.text_input("Your response",key=st.session_state.counter)
                     x1=input("Your Response")
+                    put_text("Your Response: "+x1)
+                    put_text("Better way of responding might be:")
+
                     flag=0
                 i+=1
                 if x1!="":
@@ -152,9 +157,11 @@ def main():
                 c2=chatbot(template2+"Customer: ","cust")
                 if c2 !="":
                     c2="Customer: "+c2
-                    put_text(c2)
+                    
                     #st.write(c2)
                     l.append(c2)
+                    put_text(l[i])
+                    i+=1
                     template2=template2+"\n"+c2
                     count+=1
             else :
@@ -163,8 +170,10 @@ def main():
                 c2=chatbot(template2+"Customer: ","cust")
                 c2="Customer: "+c2
                 #st.write(c2)
-                put_text(c2)
+                
                 l.append(c2)
+                put_text(l[i])
+                i+=1
                 count+=1
 
 
