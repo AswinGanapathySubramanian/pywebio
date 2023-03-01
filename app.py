@@ -141,7 +141,7 @@ def main():
                 i+=1
                 if x1!="":
                     #st.session_state.counter += 1
-                    a1=chatbot(template1+e1+"\n","agt",x1)
+                    a1=chatbot(template1+e1,"agt",x1)
                     a2= "Agent: "+a1
                     l.append(a2)
                     put_text(l[i])
@@ -160,8 +160,8 @@ def main():
                     
                     #st.write(c2)
                     l.append(c2)
-                    put_text(l[i])
-                    i+=1
+                    put_text(c2)
+                    #i+=1
                     template2=template2+"\n"+c2
                     count+=1
             else :
@@ -172,8 +172,8 @@ def main():
                 #st.write(c2)
                 
                 l.append(c2)
-                put_text(l[i])
-                i+=1
+                put_text(c2)
+                #i+=1
                 count+=1
 
 
