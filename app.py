@@ -41,7 +41,7 @@ def convo():
         memory = ConversationBufferMemory(memory_key="chat_history")
 
         llm_chain = LLMChain(
-            llm=OpenAI(openai_api_key="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",max_tokens=90),
+            llm=OpenAI(openai_api_key=api_Key,max_tokens=90),
             prompt=prompt_template,
             verbose=True,
             memory=memory,
