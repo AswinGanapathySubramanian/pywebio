@@ -8,7 +8,8 @@ from langchain.chains import ConversationChain
 import pywebio
 from pywebio.input import input
 from pywebio.output import put_text, put_html, put_markdown 
-
+from pywebio.input import *
+from pywebio.output import *
 
 # def chatbot(template,temp1,questions=""):
 #     if temp1=="cust":
@@ -30,7 +31,7 @@ from pywebio.output import put_text, put_html, put_markdown
 
 
 #@app.route("/")
-def convo():
+def main():
 
     def chatbot(template,temp1,questions=""):
         if temp1=="cust":
@@ -170,4 +171,18 @@ def convo():
 
 
 if __name__ == "__main__":
-    pywebio.start_server(convo,port="90")
+    import argparse
+    from pywebio.platform.tornado_http import start_server as start_http_server
+    from pywebio import start_server as start_ws_server
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-p", "--port", type=int, default=8080)
+    parser.add_argument("--http", action="store_true", default=False, help='Whether to enable http protocol for communicates')
+    args = parser.parse_args()
+
+    if args.http:
+        start_http_server(main, port=args.port)
+    else:
+        # Since some cloud server may close idle connections (such as heroku),
+        # use `websocket_ping_interval` to  keep the connection alive
+        start_ws_server(main, port=args.port, websocket_ping_interval=30)
