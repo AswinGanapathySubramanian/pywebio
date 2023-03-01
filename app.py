@@ -8,8 +8,9 @@ from langchain.chains import ConversationChain
 import pywebio
 from pywebio.input import input
 from pywebio.output import put_text, put_html, put_markdown 
-from pywebio.input import *
-from pywebio.output import *
+import os
+#from pywebio.input import *
+#from pywebio.output import *
 
 # def chatbot(template,temp1,questions=""):
 #     if temp1=="cust":
@@ -32,7 +33,7 @@ from pywebio.output import *
 
 #@app.route("/")
 def main():
-
+    api_Key=os.getenv("api_Key")
     def chatbot(template,temp1,questions=""):
         if temp1=="cust":
             prompt_template = PromptTemplate(input_variables=["chat_history"], template=template)
