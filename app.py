@@ -120,7 +120,7 @@ def main():
                     #st.session_state.counter += 1
                     a1=chatbot(template1+e1+"\n","agt",x)
                     a2= "Agent: "+a1
-                    l.append(a1)
+                    l.append(a2)
                     #st.write(l[i])
                     put_text(l[i])
                     i+=1
@@ -143,7 +143,7 @@ def main():
                     #st.session_state.counter += 1
                     a1=chatbot(template1+e1+"\n","agt",x1)
                     a2= "Agent: "+a1
-                    l.append(a1)
+                    l.append(a2)
                     put_text(l[i])
                     #st.write(l[i])
                     i+=1
