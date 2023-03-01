@@ -118,7 +118,7 @@ def main():
                     flag=0
                 if x!="":
                     #st.session_state.counter += 1
-                    a1=chatbot(template1+e1+"\n","agt",x)
+                    a1=chatbot(template1+e1,"agt",x)
                     a2= "Agent: "+a1
                     l.append(a2)
                     #st.write(l[i])
