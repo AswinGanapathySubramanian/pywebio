@@ -69,7 +69,7 @@ def main():
                     #print(c1)
                     l.append(c1)
                     #st.write(l[i])
-                    put_text(l[i])
+                    put_markdown("**Customer:** \n"+l[i].replace('Customer: ', '')).style('text-align: left')
                     i+=1
                     count+=1
                     template2=template2+c1
@@ -92,7 +92,7 @@ def main():
                         a2= "Agent: "+a1
                         l.append(a2)
                         #st.write(l[i])
-                        put_text(l[i].replace("Agent: ",""))
+                        put_text(l[i].replace('Agent: ', '')).style('text-align: right').style('text-align-last: right')
                         i+=1
                         count+=1
                         template1=template1+"\n"+a2
@@ -114,7 +114,7 @@ def main():
                         a1=chatbot(template1+e1+"\n","agt",x1)
                         a2= "Agent: "+a1
                         l.append(a2)
-                        put_text(l[i].replace('Agent: ', ''))
+                        put_text(l[i].replace('Agent: ', '')).style('text-align: right').style('text-align-last: right')
                         #st.write(l[i])
                         i+=1
                         count+=1
@@ -130,7 +130,7 @@ def main():
                         
                         #st.write(c2)
                         l.append(c2)
-                        put_text(c2)
+                        put_markdown("**Customer:** \n"+c2.replace('Customer: ', '')).style('text-align: left')
                         #i+=1
                         template2=template2+"\n"+c2
                         count+=1
@@ -142,13 +142,14 @@ def main():
                     #st.write(c2)
                     
                     l.append(c2)
-                    put_text(c2)
+                    put_markdown("**Customer:** \n"+c2.replace('Customer: ', '')).style('text-align: left')
                     #i+=1
                     count+=1
 
 
 
     y=select("Intent", options=['Billing issue', 'Military Discount', "Order Status","Product Availability","Refund Questions","Shipping or Pickup",'Issue with Order'])
+    put_markdown('## AmplifAI Training Simulator').style('text-align: center')
     if y=="Billing issue":
         ## Customer 
         template = """You are a customer having a call with contact center agent. You generate response for the customer based on the scenario. 
@@ -194,7 +195,8 @@ def main():
                     #print(c1)
                     l.append(c1)
                     #st.write(l[i])
-                    put_text(l[i])
+                    put_markdown("**Customer:** \n"+l[i].replace('Customer: ', '')).style('text-align: left')
+                    #put_markdown("**Customer:** \n"+l[i].replace('Customer: ', '')).style('text-align: left')
                     i+=1
                     count+=1
                     template2=template2+c1
@@ -206,9 +208,11 @@ def main():
                     flag=1
                     if flag==1:
                         #x=st.text_input("Your response",key=st.session_state.counter)
-                        x=input("User Response")
-                        put_text("User Response: "+x)
-                        put_text("LEA - A better way of responding might be:")
+                        x=input("Agent Response")
+                        #put_markdown("**Agent Response:** \n"+x).style('text-align: right')
+                        put_markdown("**Agent Response:** \n"+x).style('text-align: right')
+                        #put_markdown("AmplifAI LEA - A better way of responding might be:")
+                        put_markdown("**AmplifAI LEA - A better way of responding might be:**").style('text-align: right').style('color: #ff5722')
                         #st.session_state.counter += 1
                         flag=0
                     if x!="":
@@ -217,7 +221,8 @@ def main():
                         a2= "Agent: "+a1
                         l.append(a2)
                         #st.write(l[i])
-                        put_text(l[i].replace("Agent: ",""))
+                        put_text(l[i].replace('Agent: ', '')).style('text-align: right').style('text-align-last: right').style('text-align: right').style('text-align-last: right')
+                        
                         i+=1
                         count+=1
                         template1=template1+"\n"+a2
@@ -228,18 +233,20 @@ def main():
                     flag=1
                     if flag==1:
                         #x1=st.text_input("Your response",key=st.session_state.counter)
-                        x1=input("User Response")
-                        put_text("User Response: "+x1)
-                        put_text("LEA - A better way of responding might be:")
-
+                        x1=input("Agent Response")
+                        #put_markdown("**Agent Response:** \n"+x1).style('text-align: right')
+                        put_markdown("**Agent Response:** \n"+x1).style('text-align: right')
+                        #put_text("AmplifAI LEA - A better way of responding might be:")
+                        put_markdown("**AmplifAI LEA - A better way of responding might be:**").style('text-align: right').style('color: #ff5722')
                         flag=0
+
                     i+=1
                     if x1!="":
                         #st.session_state.counter += 1
                         a1=chatbot(template1+e1+"\n","agt",x1)
                         a2= "Agent: "+a1
                         l.append(a2)
-                        put_text(l[i].replace('Agent: ', ''))
+                        put_text(l[i].replace('Agent: ', '')).style('text-align: right').style('text-align-last: right')
                         #st.write(l[i])
                         i+=1
                         count+=1
@@ -255,7 +262,8 @@ def main():
                         
                         #st.write(c2)
                         l.append(c2)
-                        put_text(c2)
+                        #put_markdown("**Customer:** \n"+c2.replace('Customer: ', '')).style('text-align: left')
+                        put_markdown("**Customer:** \n"+c2.replace('Customer: ', '')).style('text-align: left')
                         #i+=1
                         template2=template2+"\n"+c2
                         count+=1
@@ -267,7 +275,8 @@ def main():
                     #st.write(c2)
                     
                     l.append(c2)
-                    put_text(c2)
+                    #put_markdown("**Customer:** \n"+c2.replace('Customer: ', '')).style('text-align: left')
+                    put_markdown("**Customer:** \n"+c2.replace('Customer: ', '')).style('text-align: left')
                     #i+=1
                     count+=1
 
@@ -315,7 +324,7 @@ def main():
                     #print(c1)
                     l.append(c1)
                     #st.write(l[i])
-                    put_text(l[i])
+                    put_markdown("**Customer:** \n"+l[i].replace('Customer: ', '')).style('text-align: left')
                     i+=1
                     count+=1
                     template2=template2+c1
@@ -327,9 +336,10 @@ def main():
                     flag=1
                     if flag==1:
                         #x=st.text_input("Your response",key=st.session_state.counter)
-                        x=input("User Response")
-                        put_text("User Response: "+x)
-                        put_text("LEA - A better way of responding might be:")
+                        x=input("Agent Response")
+                        put_markdown("**Agent Response:** \n"+x).style('text-align: right')
+                        #put_text("AmplifAI LEA - A better way of responding might be:")
+                        put_markdown("**AmplifAI LEA - A better way of responding might be:**").style('text-align: right').style('color: #ff5722')
                         #st.session_state.counter += 1
                         flag=0
                     if x!="":
@@ -338,7 +348,7 @@ def main():
                         a2= "Agent: "+a1
                         l.append(a2)
                         #st.write(l[i])
-                        put_text(l[i].replace("Agent: ",""))
+                        put_text(l[i].replace('Agent: ', '')).style('text-align: right').style('text-align-last: right')
                         i+=1
                         count+=1
                         template1=template1+"\n"+a2
@@ -349,10 +359,10 @@ def main():
                     flag=1
                     if flag==1:
                         #x1=st.text_input("Your response",key=st.session_state.counter)
-                        x1=input("User Response")
-                        put_text("User Response: "+x1)
-                        put_text("LEA - A better way of responding might be:")
-
+                        x1=input("Agent Response")
+                        put_markdown("**Agent Response:** \n"+x1).style('text-align: right')
+                        #put_text("AmplifAI LEA - A better way of responding might be:")
+                        put_markdown("**AmplifAI LEA - A better way of responding might be:**").style('text-align: right').style('color: #ff5722')
                         flag=0
                     i+=1
                     if x1!="":
@@ -360,7 +370,7 @@ def main():
                         a1=chatbot(template1+e1+"\n","agt",x1)
                         a2= "Agent: "+a1
                         l.append(a2)
-                        put_text(l[i].replace('Agent: ', ''))
+                        put_text(l[i].replace('Agent: ', '')).style('text-align: right').style('text-align-last: right')
                         #st.write(l[i])
                         i+=1
                         count+=1
@@ -376,10 +386,12 @@ def main():
                         
                         #st.write(c2)
                         l.append(c2)
-                        put_text(c2)
+                        #put_markdown("**Customer:** "+l[i].replace("Customer: ",""))
+                        put_markdown("**Customer:** \n"+c2.replace('Customer: ', '')).style('text-align: left')
                         #i+=1
                         template2=template2+"\n"+c2
                         count+=1
+                        print("\n\n"+c2+"\n\n")
                 else :
                     template2=template2+"\n"+a2
                     t.append(template2)
@@ -388,7 +400,7 @@ def main():
                     #st.write(c2)
                     
                     l.append(c2)
-                    put_text(c2)
+                    put_markdown("**Customer:** \n"+c2.replace('Customer: ', '')).style('text-align: left')
                     #i+=1
                     count+=1
 
@@ -436,7 +448,7 @@ def main():
                     #print(c1)
                     l.append(c1)
                     #st.write(l[i])
-                    put_text(l[i])
+                    put_markdown("**Customer:** \n"+l[i].replace('Customer: ', '')).style('text-align: left')
                     i+=1
                     count+=1
                     template2=template2+c1
@@ -448,9 +460,10 @@ def main():
                     flag=1
                     if flag==1:
                         #x=st.text_input("Your response",key=st.session_state.counter)
-                        x=input("User Response")
-                        put_text("User Response: "+x)
-                        put_text("LEA - A better way of responding might be:")
+                        x=input("Agent Response")
+                        put_markdown("**Agent Response:** \n"+x).style('text-align: right')
+                        #put_text("AmplifAI LEA - A better way of responding might be:")
+                        put_markdown("**AmplifAI LEA - A better way of responding might be:**").style('text-align: right').style('color: #ff5722')
                         #st.session_state.counter += 1
                         flag=0
                     if x!="":
@@ -459,7 +472,7 @@ def main():
                         a2= "Agent: "+a1
                         l.append(a2)
                         #st.write(l[i])
-                        put_text(l[i].replace("Agent: ",""))
+                        put_text(l[i].replace('Agent: ', '')).style('text-align: right').style('text-align-last: right')
                         i+=1
                         count+=1
                         template1=template1+"\n"+a2
@@ -470,10 +483,10 @@ def main():
                     flag=1
                     if flag==1:
                         #x1=st.text_input("Your response",key=st.session_state.counter)
-                        x1=input("User Response")
-                        put_text("User Response: "+x1)
-                        put_text("LEA - A better way of responding might be:")
-
+                        x1=input("Agent Response")
+                        put_markdown("**Agent Response:** \n"+x1).style('text-align: right')
+                        #put_text("AmplifAI LEA - A better way of responding might be:")
+                        put_markdown("**AmplifAI LEA - A better way of responding might be:**").style('text-align: right').style('color: #ff5722')
                         flag=0
                     i+=1
                     if x1!="":
@@ -481,7 +494,7 @@ def main():
                         a1=chatbot(template1+e1+"\n","agt",x1)
                         a2= "Agent: "+a1
                         l.append(a2)
-                        put_text(l[i].replace('Agent: ', ''))
+                        put_text(l[i].replace('Agent: ', '')).style('text-align: right').style('text-align-last: right')
                         #st.write(l[i])
                         i+=1
                         count+=1
@@ -497,7 +510,7 @@ def main():
                         
                         #st.write(c2)
                         l.append(c2)
-                        put_text(c2)
+                        put_markdown("**Customer:** \n"+c2.replace('Customer: ', '')).style('text-align: left')
                         #i+=1
                         template2=template2+"\n"+c2
                         count+=1
@@ -509,7 +522,7 @@ def main():
                     #st.write(c2)
                     
                     l.append(c2)
-                    put_text(c2)
+                    put_markdown("**Customer:** \n"+c2.replace('Customer: ', '')).style('text-align: left')
                     #i+=1
                     count+=1
     elif y=="Shipping or Pickup":
@@ -556,7 +569,7 @@ def main():
                     #print(c1)
                     l.append(c1)
                     #st.write(l[i])
-                    put_text(l[i])
+                    put_markdown("**Customer:** \n"+l[i].replace('Customer: ', '')).style('text-align: left')
                     i+=1
                     count+=1
                     template2=template2+c1
@@ -568,9 +581,10 @@ def main():
                     flag=1
                     if flag==1:
                         #x=st.text_input("Your response",key=st.session_state.counter)
-                        x=input("User Response")
-                        put_text("User Response: "+x)
-                        put_text("LEA - A better way of responding might be:")
+                        x=input("Agent Response")
+                        put_markdown("**Agent Response:** \n"+x).style('text-align: right')
+                        #put_text("AmplifAI LEA - A better way of responding might be:")
+                        put_markdown("**AmplifAI LEA - A better way of responding might be:**").style('text-align: right').style('color: #ff5722')
                         #st.session_state.counter += 1
                         flag=0
                     if x!="":
@@ -579,7 +593,7 @@ def main():
                         a2= "Agent: "+a1
                         l.append(a2)
                         #st.write(l[i])
-                        put_text(l[i].replace("Agent: ",""))
+                        put_text(l[i].replace('Agent: ', '')).style('text-align: right').style('text-align-last: right')
                         i+=1
                         count+=1
                         template1=template1+"\n"+a2
@@ -590,10 +604,10 @@ def main():
                     flag=1
                     if flag==1:
                         #x1=st.text_input("Your response",key=st.session_state.counter)
-                        x1=input("User Response")
-                        put_text("User Response: "+x1)
-                        put_text("LEA - A better way of responding might be:")
-
+                        x1=input("Agent Response")
+                        put_markdown("**Agent Response:** \n"+x1).style('text-align: right')
+                        #put_text("AmplifAI LEA - A better way of responding might be:")
+                        put_markdown("**AmplifAI LEA - A better way of responding might be:**").style('text-align: right').style('color: #ff5722')
                         flag=0
                     i+=1
                     if x1!="":
@@ -601,7 +615,7 @@ def main():
                         a1=chatbot(template1+e1+"\n","agt",x1)
                         a2= "Agent: "+a1
                         l.append(a2)
-                        put_text(l[i].replace('Agent: ', ''))
+                        put_text(l[i].replace('Agent: ', '')).style('text-align: right').style('text-align-last: right')
                         #st.write(l[i])
                         i+=1
                         count+=1
@@ -617,7 +631,7 @@ def main():
                         
                         #st.write(c2)
                         l.append(c2)
-                        put_text(c2)
+                        put_markdown("**Customer:** \n"+c2.replace('Customer: ', '')).style('text-align: left')
                         #i+=1
                         template2=template2+"\n"+c2
                         count+=1
@@ -629,7 +643,7 @@ def main():
                     #st.write(c2)
                     
                     l.append(c2)
-                    put_text(c2)
+                    put_markdown("**Customer:** \n"+c2.replace('Customer: ', '')).style('text-align: left')
                     #i+=1
                     count+=1
     
@@ -677,7 +691,7 @@ def main():
                     #print(c1)
                     l.append(c1)
                     #st.write(l[i])
-                    put_text(l[i])
+                    put_markdown("**Customer:** \n"+l[i].replace('Customer: ', '')).style('text-align: left')
                     i+=1
                     count+=1
                     template2=template2+c1
@@ -689,9 +703,10 @@ def main():
                     flag=1
                     if flag==1:
                         #x=st.text_input("Your response",key=st.session_state.counter)
-                        x=input("User Response")
-                        put_text("User Response: "+x)
-                        put_text("LEA - A better way of responding might be:")
+                        x=input("Agent Response")
+                        put_markdown("**Agent Response:** \n"+x).style('text-align: right')
+                        #put_text("AmplifAI LEA - A better way of responding might be:")
+                        put_markdown("**AmplifAI LEA - A better way of responding might be:**").style('text-align: right').style('color: #ff5722')
                         #st.session_state.counter += 1
                         flag=0
                     if x!="":
@@ -700,7 +715,7 @@ def main():
                         a2= "Agent: "+a1
                         l.append(a2)
                         #st.write(l[i])
-                        put_text(l[i].replace("Agent: ",""))
+                        put_text(l[i].replace('Agent: ', '')).style('text-align: right').style('text-align-last: right')
                         i+=1
                         count+=1
                         template1=template1+"\n"+a2
@@ -711,9 +726,10 @@ def main():
                     flag=1
                     if flag==1:
                         #x1=st.text_input("Your response",key=st.session_state.counter)
-                        x1=input("User Response")
-                        put_text("User Response: "+x1)
-                        put_text("LEA - A better way of responding might be:")
+                        x1=input("Agent Response")
+                        put_markdown("**Agent Response:** \n"+x1).style('text-align: right')
+                        put_markdown("**AmplifAI LEA - A better way of responding might be:**").style('text-align: right').style('color: #ff5722')
+                        #put_text("AmplifAI LEA - A better way of responding might be:")
 
                         flag=0
                     i+=1
@@ -722,7 +738,7 @@ def main():
                         a1=chatbot(template1+e1+"\n","agt",x1)
                         a2= "Agent: "+a1
                         l.append(a2)
-                        put_text(l[i].replace('Agent: ', ''))
+                        put_text(l[i].replace('Agent: ', '')).style('text-align: right').style('text-align-last: right')
                         #st.write(l[i])
                         i+=1
                         count+=1
@@ -738,7 +754,7 @@ def main():
                         
                         #st.write(c2)
                         l.append(c2)
-                        put_text(c2)
+                        put_markdown("**Customer:** \n"+c2.replace('Customer: ', '')).style('text-align: left')
                         #i+=1
                         template2=template2+"\n"+c2
                         count+=1
@@ -750,7 +766,7 @@ def main():
                     #st.write(c2)
                     
                     l.append(c2)
-                    put_text(c2)
+                    put_markdown("**Customer:** \n"+c2.replace('Customer: ', '')).style('text-align: left')
                     #i+=1
                     count+=1
 
@@ -798,7 +814,7 @@ def main():
                     #print(c1)
                     l.append(c1)
                     #st.write(l[i])
-                    put_text(l[i])
+                    put_markdown("**Customer:** \n"+l[i].replace('Customer: ', '')).style('text-align: left')
                     i+=1
                     count+=1
                     template2=template2+c1
@@ -810,9 +826,10 @@ def main():
                     flag=1
                     if flag==1:
                         #x=st.text_input("Your response",key=st.session_state.counter)
-                        x=input("User Response")
-                        put_text("User Response: "+x)
-                        put_text("LEA - A better way of responding might be:")
+                        x=input("Agent Response")
+                        put_markdown("**Agent Response:** \n"+x).style('text-align: right')
+                        #put_text("AmplifAI LEA - A better way of responding might be:")
+                        put_markdown("**AmplifAI LEA - A better way of responding might be:**").style('text-align: right').style('color: #ff5722')
                         #st.session_state.counter += 1
                         flag=0
                     if x!="":
@@ -821,7 +838,7 @@ def main():
                         a2= "Agent: "+a1
                         l.append(a2)
                         #st.write(l[i])
-                        put_text(l[i].replace("Agent: ",""))
+                        put_text(l[i].replace('Agent: ', '')).style('text-align: right').style('text-align-last: right')
                         i+=1
                         count+=1
                         template1=template1+"\n"+a2
@@ -832,10 +849,10 @@ def main():
                     flag=1
                     if flag==1:
                         #x1=st.text_input("Your response",key=st.session_state.counter)
-                        x1=input("User Response")
-                        put_text("User Response: "+x1)
-                        put_text("LEA - A better way of responding might be:")
-
+                        x1=input("Agent Response")
+                        put_markdown("**Agent Response:** \n"+x1).style('text-align: right')
+                        #put_text("AmplifAI LEA - A better way of responding might be:")
+                        put_markdown("**AmplifAI LEA - A better way of responding might be:**").style('text-align: right').style('color: #ff5722')
                         flag=0
                     i+=1
                     if x1!="":
@@ -843,7 +860,7 @@ def main():
                         a1=chatbot(template1+e1+"\n","agt",x1)
                         a2= "Agent: "+a1
                         l.append(a2)
-                        put_text(l[i].replace('Agent: ', ''))
+                        put_text(l[i].replace('Agent: ', '')).style('text-align: right').style('text-align-last: right')
                         #st.write(l[i])
                         i+=1
                         count+=1
@@ -859,7 +876,7 @@ def main():
                         
                         #st.write(c2)
                         l.append(c2)
-                        put_text(c2)
+                        put_markdown("**Customer:** \n"+c2.replace('Customer: ', '')).style('text-align: left')
                         #i+=1
                         template2=template2+"\n"+c2
                         count+=1
@@ -871,7 +888,7 @@ def main():
                     #st.write(c2)
                     
                     l.append(c2)
-                    put_text(c2)
+                    put_markdown("**Customer:** \n"+c2.replace('Customer: ', '')).style('text-align: left')
                     #i+=1
                     count+=1
 
@@ -919,7 +936,7 @@ def main():
                     #print(c1)
                     l.append(c1)
                     #st.write(l[i])
-                    put_text(l[i])
+                    put_markdown("**Customer:** \n"+l[i].replace('Customer: ', '')).style('text-align: left')
                     i+=1
                     count+=1
                     template2=template2+c1
@@ -931,9 +948,10 @@ def main():
                     flag=1
                     if flag==1:
                         #x=st.text_input("Your response",key=st.session_state.counter)
-                        x=input("User Response")
-                        put_text("User Response: "+x)
-                        put_text("LEA - A better way of responding might be:")
+                        x=input("Agent Response")
+                        put_markdown("**Agent Response:** \n"+x).style('text-align: right')
+                        #put_text("AmplifAI LEA - A better way of responding might be:")
+                        put_markdown("**AmplifAI LEA - A better way of responding might be:**").style('text-align: right').style('color: #ff5722')
                         #st.session_state.counter += 1
                         flag=0
                     if x!="":
@@ -942,7 +960,7 @@ def main():
                         a2= "Agent: "+a1
                         l.append(a2)
                         #st.write(l[i])
-                        put_text(l[i].replace("Agent: ",""))
+                        put_text(l[i].replace('Agent: ', '')).style('text-align: right').style('text-align-last: right')
                         i+=1
                         count+=1
                         template1=template1+"\n"+a2
@@ -953,10 +971,10 @@ def main():
                     flag=1
                     if flag==1:
                         #x1=st.text_input("Your response",key=st.session_state.counter)
-                        x1=input("User Response")
-                        put_text("User Response: "+x1)
-                        put_text("LEA - A better way of responding might be:")
-
+                        x1=input("Agent Response")
+                        put_markdown("**Agent Response:** \n"+x1).style('text-align: right')
+                        #put_text("AmplifAI LEA - A better way of responding might be:")
+                        put_markdown("**AmplifAI LEA - A better way of responding might be:**").style('text-align: right').style('color: #ff5722')
                         flag=0
                     i+=1
                     if x1!="":
@@ -964,7 +982,7 @@ def main():
                         a1=chatbot(template1+e1+"\n","agt",x1)
                         a2= "Agent: "+a1
                         l.append(a2)
-                        put_text(l[i].replace('Agent: ', ''))
+                        put_text(l[i].replace('Agent: ', '')).style('text-align: right').style('text-align-last: right')
                         #st.write(l[i])
                         i+=1
                         count+=1
@@ -980,7 +998,7 @@ def main():
                         
                         #st.write(c2)
                         l.append(c2)
-                        put_text(c2)
+                        put_markdown("**Customer:** \n"+c2.replace('Customer: ', '')).style('text-align: left')
                         #i+=1
                         template2=template2+"\n"+c2
                         count+=1
@@ -992,7 +1010,7 @@ def main():
                     #st.write(c2)
                     
                     l.append(c2)
-                    put_text(c2)
+                    put_markdown("**Customer:** \n"+c2.replace('Customer: ', '')).style('text-align: left')
                     #i+=1
                     count+=1
 
